@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="ai" class="com.telusko.service.AIDesign"/>
+    <bean id="dev" class="com.telusko.service.DevOps"/>
+    <bean id="sd" class="com.telusko.service.SystemDesign"/>
+    <bean id="telusko" class="com.telusko.main.Telusko" >
+        <property ref="sd" name="course"> </property>
+        <constructor-arg ref="dev" name="course"></constructor-arg>
+    </bean>
+
+
+
+</beans>
